@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/style.css"></link>
     <title>Rapid-Fire-Quiz</title>
 </head>
 <body>
-    <h1>Rapid Fire Quiz</h1>
-    <p>Try to answer all the question correctly and as fast as you can to achieve 
-        the high score</p>
-    
+    <h1 class="boldText">Rapid Fire Coding Quiz</h1>
+    <div id="timerDisplay">Time:0</div>
+    <a href="" id="viewHighscores">View Highscores</a>
+    <p class="smallText">Try to answer all the coding related question correctly as fast as you can to achieve 
+        the high score and brag<br> to your fellow coders. Keep in mind for every wrong answer
+        you will be penalized 10 seconds from your timer. </p>
+        <div class="questionsContainer">
+            <h1 class="questionTitles"> HI? </h1>
+            <button id="optionA">A.</button>
+            <button id="optionB">B.</button>
+            <button id="optionC">C.</button>
+            <button id="optionD">D.</button>
+    </div>
+        <div class="answersContainers">
+        </div>
+        <button id="startButton">
+            Start Quiz
+        </button>
+        
+    <script src="./javascript.js"></script>
 </body>
 </html>

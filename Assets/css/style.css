@@ -1,0 +1,70 @@
+:root{
+    background-color: grey;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#timerDisplay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .boldText{
+    color: blueviolet;
+    display: block;
+    text-align: center;
+    margin-top: 280px;
+    font-size: 70px;
+}
+
+  #viewHighscores{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-decoration: underline;
+    color: blueviolet;
+  }
+
+  .questionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:blueviolet
+  }
+
+  .questionsContainer button{
+    color: white;
+  }
+   
+  button {
+    background-color: blueviolet;
+  }
+
+  #startButton{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color:white
+  }
+.smallText{
+    text-align: center;
+    font-size: 20px;
+}
+
+.questionTitles {
+    display: none;
+    color: blueviolet;
+    text-align: center;
+}
+
+.answersContainers{
+    display: none;
+    text-align: center;
+}
