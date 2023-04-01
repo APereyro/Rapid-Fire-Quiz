@@ -1,0 +1,41 @@
+body{
+    color: black;
+}
+
+.choice-container{
+    display: flex;
+    width: 30%;
+    border-radius: 3px;
+    background: purple;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.choice-container:hover{
+    cursor: pointer;
+
+}
+
+.choice-prefix{
+    padding: 4px;
+    color: black;
+}
+
+.choice-text{
+    padding:4px;
+    width: 30%;
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix {
+    text-align: center;
+    font-size: 30px;
+}
+.hud-main-text{
+    text-align: center;
+}
+
