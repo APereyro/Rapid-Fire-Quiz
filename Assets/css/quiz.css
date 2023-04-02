@@ -2,13 +2,16 @@ body{
     color: black;
 }
 
+
 .choice-container{
     display: flex;
+    align-content: center;
     width: 30%;
     border-radius: 3px;
     background: purple;
     font-size: 20px;
     margin-bottom: 10px;
+   
 }
 
 .choice-container:hover{
