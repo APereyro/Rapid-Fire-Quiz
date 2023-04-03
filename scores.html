@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highscores</title>
+    <title>LeaderBoard</title>
     <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
     <div class="container">
         <div id="scores">
             <h1 id="finalScore">0</h1>
-            <form class="high-scores-container">
-                <h2 id="scores-text">Enter your initails to save your score!!</h2>
+            <!-- <form class="high-scores-container"> -->
+                <h2 id="scores-text">Enter your initials to save your score!!</h2>
                 <input type="text" name="initails" id="username" placeholder="Enter your Intials">
-                <button class="btn" id="saveScoreBtn" type="submit" onClick="saveHighScore(event)">Save</button>
-            </form>
-            <a href="/Rapid-Fire-Quiz/quiz.html" class="btn">Try Again</a>
+                <button class="btn" id="saveScoreBtn">Save</button>
+            <!-- </form> -->
+            <a href="./index.html" class="btn">Try Again</a>
         </div>
     </div>
-    
+    <script src="./localstorage.js"></script>
+    <!-- <script src="./javascript.js"></script> -->
 </body>
 </html>

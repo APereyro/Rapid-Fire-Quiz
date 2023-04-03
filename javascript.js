@@ -2,11 +2,10 @@ const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const timerText = document.querySelector('#timer');
 
-
-
-let currentQuestion= {}
+let currentQuestion = {}
 let acceptingAnswers = true
-let timer = 70
+let score = 70
+let questionCounter = 0
 let availableQuestions = []
 
 let questions = [
@@ -41,7 +40,69 @@ let questions = [
         choice3: 'if i = 5 then',
         choice4: 'if (i==5)',
         answer: 4,
-            
     }
 ]
+
+const minusTime = 10
+const maxQuestions = 4 
+
+startGame = () => {
+    questionCounter = 0
+    score = 70
+    availableQuestions = [...questions]
+    getNewQuestion()
+}
+
+getNewQuestion = () => {
+    if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
+        localStorage.setItem('mostRecentScore', score)
+        return window.location.assign('./scores.html')
+    }
+
+    questionCounter++
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionsIndex]
+    question.innerText = currentQuestion.question
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number']
+        choice.innerText = currentQuestion['choice' + number]
+    })
+
+    choices.forEach(choice => {
+        choice.addEventListener('click', e => {
+            if (!acceptingAnswers) return;
+
+            acceptingAnswers = false;
+            const selected = e.target;
+            const selectedAnswer = selected.dataset['number'];
+
+            let classToApply =
+                selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+            if (classToApply === 'incorrect') {
+                decrementTimer(minusTime);
+            }
+
+            selected.parentElement.classList.add(classToApply);
+
+            setTimeout(() => {
+                selected.parentElement.classList.remove(classToApply);
+                acceptingAnswers = true;
+                availableQuestions.splice(questionsIndex,1);
+                getNewQuestion();
+            }, 1000);       
+        })
+    })
+
+    acceptingAnswers = true
+}
+
+decrementTimer = num => {
+    score -=num
+    timerText.innerText = score
+}
+
+startGame()
+
 

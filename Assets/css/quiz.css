@@ -42,3 +42,20 @@ body{
     text-align: center;
 }
 
+#highScores{
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+#highScoresList{
+    list-style: none;
+    text-align: center;
+   
+
+}
+
+#finalScore{
+    text-align: center;
+    
+}
