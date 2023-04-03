@@ -1,10 +1,12 @@
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const timerText = document.querySelector('#timer');
+const correctSound = new Audio('https://assets.mixkit.co/active_storage/sfx/212/212.wav');
+const incorrectSound = new Audio('https://assets.mixkit.co/active_storage/sfx/213/213.wav');
 
 let currentQuestion = {}
 let acceptingAnswers = true
-let score = 70
+let score = 50 
 let questionCounter = 0
 let availableQuestions = []
 
@@ -48,14 +50,23 @@ const maxQuestions = 4
 
 startGame = () => {
     questionCounter = 0
-    score = 70
     availableQuestions = [...questions]
     getNewQuestion()
+    const timer = setInterval(() => {
+        score--;
+        timerText.innerText = score;
+        if (score === 0) {
+            clearInterval(timer);
+            localStorage.setItem('mostRecentScore', 0);
+            return window.location.assign('./scores.html');
+        }
+    }, 1000);
 }
 
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
-        localStorage.setItem('mostRecentScore', score)
+        localStorage.setItem('mostRecentScore', score);
+        clearInterval(timer);
         return window.location.assign('./scores.html')
     }
 
@@ -80,8 +91,23 @@ getNewQuestion = () => {
             let classToApply =
                 selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+                
+            if (classToApply === 'correct') {
+                correctSound.play()
+                const feedbackText = document.createElement('p');
+                feedbackText.innerText = 'Correct!';
+                feedbackText.classList.add('feedback', 'correct');
+                question.appendChild(feedbackText);
+            } else {
+                incorrectSound.play()
+                const feedbackText = document.createElement('p');
+                feedbackText.innerText = 'Wrong!';
+                feedbackText.classList.add('feedback', 'incorrect');
+                question.appendChild(feedbackText);
+            }
             if (classToApply === 'incorrect') {
-                decrementTimer(minusTime);
+                score -= minusTime;
+                timerText.innerText = score;
             }
 
             selected.parentElement.classList.add(classToApply);
@@ -98,11 +124,5 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
-decrementTimer = num => {
-    score -=num
-    timerText.innerText = score
-}
-
 startGame()
-
 
