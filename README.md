@@ -4,6 +4,14 @@
 
 This is a timed quiz that tests your knowledge of coding concepts and syntax. The quiz consists of multiple-choice questions, and you must answer each question within a set amount of time. For each incorrect answer, time will be deducted from your score. At the end of the quiz, you can submit your score to see how you compare to other players.
 
+![Screenshot (30)](https://user-images.githubusercontent.com/124737955/229941961-73fff619-74f8-4d33-8551-7aab3354024d.png)
+
+![Screenshot (31)](https://user-images.githubusercontent.com/124737955/229941967-e08e57be-ee5a-4213-8f8b-9f44119721fd.png)
+
+![Screenshot (32)](https://user-images.githubusercontent.com/124737955/229941973-bd1b0bba-dede-41a2-ae6c-8df873e4249b.png)
+
+![Screenshot (33)](https://user-images.githubusercontent.com/124737955/229941984-ba1b809b-1261-4a9a-aaf2-d9afaa81a13f.png)
+
 ## Features
 
 Multiple-choice questions
