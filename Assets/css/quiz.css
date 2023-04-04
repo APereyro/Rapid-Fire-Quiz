@@ -2,6 +2,9 @@ body{
     color: black;
 }
 
+.hud-item{
+    color: purple;
+}
 
 .choice-container{
     display: flex;
@@ -101,3 +104,17 @@ body{
     justify-content: center;
     height: 100vh;
 }
+
+.question {
+    position: relative;
+  }
+  .feedback {
+    position: absolute;
+   
+  }
+
+  .highscores-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }

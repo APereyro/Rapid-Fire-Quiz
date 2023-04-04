@@ -6,7 +6,7 @@ const incorrectSound = new Audio('https://assets.mixkit.co/active_storage/sfx/21
 
 let currentQuestion = {}
 let acceptingAnswers = true
-let score = 50 
+let score = 900 
 let questionCounter = 0
 let availableQuestions = []
 
