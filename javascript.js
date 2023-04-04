@@ -92,23 +92,21 @@ getNewQuestion = () => {
                 selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
                 
-            if (classToApply === 'correct') {
-                correctSound.play()
-                const feedbackText = document.createElement('p');
-                feedbackText.innerText = 'Correct!';
-                feedbackText.classList.add('feedback', 'correct');
-                question.appendChild(feedbackText);
-            } else {
-                incorrectSound.play()
-                const feedbackText = document.createElement('p');
-                feedbackText.innerText = 'Wrong!';
-                feedbackText.classList.add('feedback', 'incorrect');
-                question.appendChild(feedbackText);
-            }
-            if (classToApply === 'incorrect') {
-                score -= minusTime;
-                timerText.innerText = score;
-            }
+                if (classToApply === 'correct') {
+                    correctSound.play();
+                    const feedbackText = document.createElement('p');
+                    feedbackText.innerText = 'Correct!';
+                    feedbackText.classList.add('feedback', 'correct');
+                    question.appendChild(feedbackText);
+                } else {
+                    incorrectSound.play();
+                    const feedbackText = document.createElement('p');
+                    feedbackText.innerText = 'Wrong!';
+                    feedbackText.classList.add('feedback', 'incorrect');
+                    question.appendChild(feedbackText);
+                    score -= minusTime;
+                    timerText.innerText = score;
+                }
 
             selected.parentElement.classList.add(classToApply);
 
@@ -123,6 +121,6 @@ getNewQuestion = () => {
 
     acceptingAnswers = true
 }
-
 startGame()
+
 

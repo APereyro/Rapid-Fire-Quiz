@@ -89,16 +89,21 @@ input::placeholder {
 
 #username{
     margin-bottom: 10px;
-    width:100%;
+    width:20%;
     outline:none;
 }
 
 #saveScoreBtn {
   border: none;
   padding: 4px;
-  margin-left: 200px;
   margin-bottom: 15px;
   margin-top: 10px;
 }
 
+.btn{
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: greenyellow;
+}
 
