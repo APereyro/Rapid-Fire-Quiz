@@ -111,6 +111,10 @@ getNewQuestion = () => {
             selected.parentElement.classList.add(classToApply);
 
             setTimeout(() => {
+                const feedbackText = document.querySelector('.feedback');
+                if (feedbackText) {
+                    feedbackText.remove();
+                }
                 selected.parentElement.classList.remove(classToApply);
                 acceptingAnswers = true;
                 availableQuestions.splice(questionsIndex,1);
