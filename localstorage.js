@@ -1,10 +1,9 @@
 const username = document.querySelector('#username');
-const finalScore = document.querySelector('#finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 const saveBtn = document.getElementById('saveScoreBtn');
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-const highScoresInitials = document.getElementById('highScoresList');
-
+const finalScore = document.querySelector('#finalScore');
+finalScore.innerText = mostRecentScore;
 const saveHighScore = function(e) {
     e.preventDefault();
     
@@ -30,5 +29,3 @@ const saveHighScore = function(e) {
 };
 
 saveBtn.addEventListener('click', saveHighScore);
-finalScore.innerText = mostRecentScore;
-highScoresInitials.innerText = highScores[0].name;
